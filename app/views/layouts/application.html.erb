@@ -35,10 +35,24 @@
               <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
+          <ul class="navbar-nav">
+          <%if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Sair", destroy_user_session_path,method: :delete, class: "btn btn-success"%>
+            </li>
+          <%else%>  
+            <li class="nav-item">
+            <%= link_to "Entrar", new_user_session_path,method: :delete, class: "btn btn-success"%>
+            <%= link_to "Registrar", new_user_registration_path,method: :delete, class: "btn btn-success"%>
+            </li>
+          <%end%>
+          </ul>
         </div>
       </div>
     </nav>
-
+    <% flash.each do |name,message| %>
+      <%= content_tag(:div,message,class: "alert alert-info #{name}")%>
+    <%end%>
     <%= yield %>
   </body>
 </html>
