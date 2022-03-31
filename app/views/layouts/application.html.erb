@@ -38,7 +38,7 @@
           <ul class="navbar-nav">
           <%if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Sair", destroy_user_session_path,method: :delete, class: "btn btn-success"%>
+              <%= link_to "Sair", destroy_user_session_path, 'data-turbo-method': :delete, class: "btn btn-success"%>
             </li>
           <%else%>  
             <li class="nav-item">
