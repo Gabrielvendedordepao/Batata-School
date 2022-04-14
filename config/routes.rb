@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
+  resources :rooms
   resources :tweets
   devise_for :users
   root 'pages#home'

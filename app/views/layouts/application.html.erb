@@ -6,8 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- IMPORTANDO OS CSS-->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "home", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "GlobalStyle", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "card", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "animation", "data-turbo-track": "reload" %>
+
+ 
+
+    
 
     <%= javascript_importmap_tags %>
   </head>
@@ -26,7 +34,12 @@
               <%= link_to "Turmas", turmas_path, class: "nav-link active" %>
             </li>
             <li class="nav-item">
+              <%= link_to "Tweets", tweets_path, class: "nav-link active" %>
               <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Chat", tweets_path, class: "nav-link active" %>
+              <a class="nav-link disable">Disabled</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Pricing</a>
